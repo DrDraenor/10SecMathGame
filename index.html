@@ -16,7 +16,24 @@
 			<h1>10 Seconds Math Game</h1>
 			<div class="row">
 				<div class="col-xs-12">
-					
+					<p>Time left: <span id="score">10</span> seconds</p>
+					Result:
+					<input type="number" id="result" />
+					Max Number:
+					<input type="range" id="maxNums" min="10" max="100" step="1" />
+					Operators:
+					+
+					<input type="checkbox" id="addCB" />
+					-
+					<input type="checkbox" id="subCB" />
+					x
+					<input type="checkbox" id="mulCB" />
+					/
+					<input type="checkbox" id="divCB" />
+				</div>
+				<div>
+					<p>Current Score: <span id="score">0</span></p>
+					<p>High Score: <span id="highScore">0</span></p>
 				</div>
 			</div>
     </div>
