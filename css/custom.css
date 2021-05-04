@@ -1,5 +1,5 @@
 .game-container {
-	margin-top: 20px;
+	margin-top: 5px;
 	text-align: center;
 }
 
@@ -9,9 +9,12 @@ input#answer {
 	text-align: center;
 	border: 3px solid black;
 }
-#timeLeft {
+#timeLeft, #timeAdded {
 	font-size: 1.4em;
 	font-weight: bold;
+}
+#timeAdded {
+	display: none;
 }
 #problem {
 	font-size: 3em;

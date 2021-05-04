@@ -142,6 +142,12 @@ $(document).ready(function () {
 				score++;
 				$("#score").html(score);
 				$('#answer').val("");
+				
+				end += 1000;
+				$("#timeAdded").fadeIn(400, function () {
+					$("#timeAdded").fadeOut(300);
+				});
+				
 				generateProblem();
 			}
 		}, 100);
