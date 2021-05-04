@@ -1,19 +1,46 @@
-.scores {
-	margin-top: 10px;
-	text-align: right;
-}
-
 .game-container {
-	margin-top: 40px;
+	margin-top: 30px;
 	text-align: center;
 }
 
+/* Game Related Elements */
+input#answer {
+	line-height: 2em;
+	text-align: center;
+}
+#timeLeft {
+	font-size: 1.4em;
+	font-weight: bold;
+}
+#problem {
+	font-size: 3em;
+	font-weight: bold;
+}
+
+/* Scores */
+#scores {
+	margin-top: 15px;
+	text-align: right;
+}
+.score {
+	font-weight: bold;
+}
+
+/* Controls */
+.controls {
+	width: 400px;
+	margin: 0 auto;
+	padding: 20px;
+	border: 1px solid #ccc;
+}
+.disabledControls {
+	pointer-events: none;
+	opacity: 0.4;
+}
 input[type="range"] {
 	width: 300px;
 	margin: 0 auto;
 }
-
-input#answer {
-	line-height: 2em;
-	text-align: center;
+label[for="maxNumR"] {
+	font-weight: normal;
 }

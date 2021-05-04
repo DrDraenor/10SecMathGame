@@ -1,8 +1,10 @@
 var operators = ["+"];
 var maxN = 10;
 var result = 4;
-var score = 0, hscore = 0;
+var score = 0, hscore = 0, tscore = 0;
 var gameTime = 10000; // How much time the game lasts in ms
+var secondsLeft = 10;
+var now, end;
 
 var randomInt = function (min, max) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -57,6 +59,56 @@ var removeOperator = function (op) {
 	operators = operators.slice(0,opIndex).concat(operators.slice(opIndex+1));
 }
 
+var interval;
+var startCountdown = function () {
+	$("#instructions").hide();
+	$(".controls").addClass("disabledControls");
+	now = new Date().getTime();
+	end = now + gameTime;
+	interval = window.setInterval(checkTimeLeft, 100);
+}
+
+var gameEnds = function () {
+	$("#timeLeft").html("10.0");
+	$("#answer").val("");
+	$(".controls").removeClass("disabledControls");
+	
+	if (score > hscore) {
+		hscore = score;
+		$("#hscore").html(hscore);
+	}
+	tscore += score;
+	$("#tscore").html(tscore);
+	
+	generateProblem();
+	
+	$("#answer").prop("disabled", true);
+	setTimeout(function () {
+		$("#answer").prop("disabled", false);
+		$("#score").html("0");
+	}, 1000);
+	
+	$("#instructions").html("Good job! You made <b>" + score + " points!</b> Want to try again?")
+	$("#instructions").show(1000);
+	score = 0;
+	
+	window.clearInterval(interval);
+	interval = null;
+}
+
+var checkTimeLeft = function() {
+	now = new Date().getTime();
+	
+	var deltaT = end - now;
+	
+	if (deltaT <= 0) {
+		gameEnds();
+	} else {
+		secondsLeft = deltaT/1000;
+		$("#timeLeft").html(secondsLeft.toFixed(1));
+	}
+}
+
 
 $(document).ready(function () {
 	$('#maxNumR').on('change mousemove', function (event) {
@@ -81,6 +133,9 @@ $(document).ready(function () {
 	
 	var timeout;
 	$('#answer').on('input', function () {
+		if (!interval) {
+			startCountdown();
+		}
 		clearTimeout(timeout);
 		timeout = setTimeout(function () {
 			if ($('#answer').val() == result) {
@@ -92,6 +147,6 @@ $(document).ready(function () {
 		}, 100);
 	});
 	
-	
+	generateProblem();
 	
 });

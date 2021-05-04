@@ -17,24 +17,26 @@
 				<div class="col-xs-8">
 					<h1>10 Seconds Math Game</h1>
 				</div>
-				<div class="col-xs-4 scores">
-					<p>Current Score: <span id="score">0</span></p>
-					<p>High Score: <span id="highScore">0</span></p>
+				<div class="col-xs-4" id="scores">
+					<p>High Score: <span class="score" id="hscore">0</span></p>
+					<p>Total Score: <span class="score" id="tscore">0</span></p>
 				</div>
 				<div class="col-xs-12 game-container">
-					<h2>Time left: <span id="score">10</span> seconds</h2>
-					<p id="instructions">The Game will start once you start typing the first answer.</p>
+					<h2>Time left: <span id="timeLeft">10.0</span> seconds</h2>
 					
 					<h2 id="problem">2 + 2</h2><br>
 					
 					<label for="answer">Your Answer: </label><br>
-					<input type="number" id="answer" /><br><br><br>
+					<input type="number" id="answer" /><br><br>
 					
-					<label for="maxNumR">Max Operand: <span id="maxNum">10</span></label><br>
-					<input type="range" id="maxNumR" value="10" min="10" max="100" step="1" /><br>
+					<h2>Score: <span class="score" id="score">0</span></h3><br>
 					
-					Operators:
-					<div>
+					<div class="controls">
+						<label for="maxNumR">Max Operands: <span id="maxNum">10</span></label><br>
+						<input type="range" id="maxNumR" value="10" min="10" max="100" step="1" /><br>
+
+						Operators:
+						<br>	
 						+
 						<input type="checkbox" id="addCB" data_operator="+" checked disabled />
 						-
@@ -44,6 +46,9 @@
 						/
 						<input type="checkbox" id="divCB" data_operator="/" />
 					</div>
+					
+					<br>
+					<p id="instructions">The Game will begin once you start typing in the first answer.</p>
 				</div>
 			</div>
     </div>
