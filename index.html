@@ -30,19 +30,19 @@
 					<label for="answer">Your Answer: </label><br>
 					<input type="number" id="answer" /><br><br><br>
 					
-					<label for="maxNumR">Max Number: <span id="maxNum">10</span></label><br>
-					<input type="range" id="maxNumR" min="10" max="100" step="1" /><br>
+					<label for="maxNumR">Max Operand: <span id="maxNum">10</span></label><br>
+					<input type="range" id="maxNumR" value="10" min="10" max="100" step="1" /><br>
 					
 					Operators:
 					<div>
 						+
-						<input type="checkbox" id="addCB" checked />
+						<input type="checkbox" id="addCB" data_operator="+" checked disabled />
 						-
-						<input type="checkbox" id="subCB" />
-						x
-						<input type="checkbox" id="mulCB" />
+						<input type="checkbox" id="subCB" data_operator="-" />
+						*
+						<input type="checkbox" id="mulCB" data_operator="*" />
 						/
-						<input type="checkbox" id="divCB" />
+						<input type="checkbox" id="divCB" data_operator="/" />
 					</div>
 				</div>
 			</div>
