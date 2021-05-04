@@ -1,12 +1,13 @@
 .game-container {
-	margin-top: 30px;
+	margin-top: 20px;
 	text-align: center;
 }
 
 /* Game Related Elements */
 input#answer {
-	line-height: 2em;
+	line-height: 2.4em;
 	text-align: center;
+	border: 3px solid black;
 }
 #timeLeft {
 	font-size: 1.4em;
@@ -15,6 +16,10 @@ input#answer {
 #problem {
 	font-size: 3em;
 	font-weight: bold;
+	padding: 15px;
+	margin: 0 auto;
+	width: 300px;
+	border: 1px solid black;
 }
 
 /* Scores */
@@ -43,4 +48,16 @@ input[type="range"] {
 }
 label[for="maxNumR"] {
 	font-weight: normal;
+}
+
+/* Hide Number Input Arrows */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
