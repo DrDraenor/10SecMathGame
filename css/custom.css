@@ -1,0 +1,19 @@
+.scores {
+	margin-top: 10px;
+	text-align: right;
+}
+
+.game-container {
+	margin-top: 40px;
+	text-align: center;
+}
+
+input[type="range"] {
+	width: 300px;
+	margin: 0 auto;
+}
+
+input#answer {
+	line-height: 2em;
+	text-align: center;
+}

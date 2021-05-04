@@ -13,27 +13,37 @@
   </head>
   <body>
 		<div class="container">
-			<h1>10 Seconds Math Game</h1>
 			<div class="row">
-				<div class="col-xs-12">
-					<p>Time left: <span id="score">10</span> seconds</p>
-					Result:
-					<input type="number" id="result" />
-					Max Number:
-					<input type="range" id="maxNums" min="10" max="100" step="1" />
-					Operators:
-					+
-					<input type="checkbox" id="addCB" />
-					-
-					<input type="checkbox" id="subCB" />
-					x
-					<input type="checkbox" id="mulCB" />
-					/
-					<input type="checkbox" id="divCB" />
+				<div class="col-xs-8">
+					<h1>10 Seconds Math Game</h1>
 				</div>
-				<div>
+				<div class="col-xs-4 scores">
 					<p>Current Score: <span id="score">0</span></p>
 					<p>High Score: <span id="highScore">0</span></p>
+				</div>
+				<div class="col-xs-12 game-container">
+					<h2>Time left: <span id="score">10</span> seconds</h2>
+					<p id="instructions">The Game will start once you start typing the first answer.</p>
+					
+					<h2 id="problem">2 + 2</h2><br>
+					
+					<label for="answer">Your Answer: </label><br>
+					<input type="number" id="answer" /><br><br><br>
+					
+					<label for="maxNumR">Max Number: <span id="maxNum">10</span></label><br>
+					<input type="range" id="maxNumR" min="10" max="100" step="1" /><br>
+					
+					Operators:
+					<div>
+						+
+						<input type="checkbox" id="addCB" checked />
+						-
+						<input type="checkbox" id="subCB" />
+						x
+						<input type="checkbox" id="mulCB" />
+						/
+						<input type="checkbox" id="divCB" />
+					</div>
 				</div>
 			</div>
     </div>
